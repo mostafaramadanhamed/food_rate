@@ -34,15 +34,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff664AF5),
-      child: Stack(
+    return Container(height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [
+          Colors.blue.shade100,
+          Colors.blue.shade200,
+          Colors.blue.shade300,
+          Colors.blue.shade400,
+        ])
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           Center(child: Image(image: AssetImage(SplashImage),)),
-          Positioned(
-              top: MediaQuery.of(context).size.height/1.52,
-              right: MediaQuery.of(context).size.width/2.7,
-              child: SlidingText(slidingAnimation: slidingAnimation)),
+           Image(image: AssetImage(SplashImage),),
+          SlidingText(slidingAnimation: slidingAnimation),
         ],
       ),
     );
@@ -65,7 +71,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Timer(const Duration(milliseconds: delayTime), ()
     {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Register()));
+          context, MaterialPageRoute(builder: (context) => Login()));
     });
   }
 }
