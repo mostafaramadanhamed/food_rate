@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:food_rate/view/register_screen.dart';
+import 'package:food_rate/view/login_screen.dart';
 import '../../../const/img.dart';
 import '../../../const/num.dart';
 import 'slidin_text.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/img.dart';
+import 'package:food_rate/view/register.dart';
 
 import 'custom_widget.dart';
 
@@ -24,17 +25,34 @@ class Login extends StatelessWidget {
                 ),
                 const Center(child: Image(image: AssetImage(SplashImage))),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 6,
+                  height: MediaQuery.of(context).size.height / 40,
                 ),
-                buildTextFormField(label: "Email",onChanged: (m){}),
+                const Text(
+                  'Food Rate',
+                  style: TextStyle(
+                    fontSize: 27,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 12,
+                ),
+                buildTextFormField(label: "Email", onChanged: (m) {}),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 30,
                 ),
-               buildTextFormField(label:  "Password", onChanged: (m){}),
+                buildTextFormField(label: "Password", onChanged: (m) {}),
                 buildRowInBottom(
                     text: 'Don’t have an account?',
                     textButton: 'Sign up',
-                    buttonOnPressed: () {}),
+                    buttonOnPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Register();
+                      }));
+                    }),
               ],
             ),
           ],
@@ -42,5 +60,4 @@ class Login extends StatelessWidget {
       ),
     );
   }
-
 }
