@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/img.dart';
 
-import 'custom_widget.dart';
+import '../home_screen.dart';
+import 'widgets/custom_widget.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
@@ -43,6 +44,13 @@ class Register extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 30,
                 ),
                 buildTextFormField(label: "Password", onChanged: (m) {}),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 45,
+                ),
+                buildButton(context,text: 'Sign up',onPressed: (){
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context)=> const HomePage() ) );
+                }),
                 buildRowInBottom(
                     text: 'Already have account',
                     textButton: 'Login',
@@ -56,4 +64,6 @@ class Register extends StatelessWidget {
       ),
     );
   }
+
+
 }

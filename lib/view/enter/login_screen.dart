@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/img.dart';
-import 'package:food_rate/view/register.dart';
+import 'package:food_rate/view/enter/register.dart';
 
-import 'custom_widget.dart';
+import 'widgets/custom_widget.dart';
+import '../home_screen.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -44,6 +45,13 @@ class Login extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 30,
                 ),
                 buildTextFormField(label: "Password", onChanged: (m) {}),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 45,
+                ),
+                buildButton(context, text: 'Login',
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage() ) );
+                }),
                 buildRowInBottom(
                     text: 'Don’t have an account?',
                     textButton: 'Sign up',

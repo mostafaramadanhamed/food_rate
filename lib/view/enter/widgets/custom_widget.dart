@@ -12,7 +12,18 @@ TextFormField buildTextFormField({required String label, required void Function(
     onChanged: onChanged,
   );
 }
+Container buildButton(BuildContext context,{required String text,required void Function()? onPressed}) {
+  return Container(
+    height: MediaQuery.of(context).size.height/12,
+    width: MediaQuery.of(context).size.width/1.2,
+    decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.circular(25)
+    ),
 
+    child: TextButton(onPressed: onPressed, child: Text(text,style: TextStyle(color: Colors.white,fontSize: 25),)),
+  );
+}
 Row buildRowInBottom(
     {required String text,
       required String textButton,
