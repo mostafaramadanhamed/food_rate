@@ -19,7 +19,7 @@ class Login extends StatelessWidget {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
-            Column(
+            Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 20,
@@ -28,17 +28,32 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
                 ),
-                const Text(
-                  'Food Rate',
-                  style: TextStyle(
-                    fontSize: 27,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
+                const Center(
+                  child:  Text(
+                    'Food Rate',
+                    style: TextStyle(
+                      fontSize: 27,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 12,
+                  height: MediaQuery.of(context).size.height / 22,
+                ),
+                 Padding(
+                  padding:const  EdgeInsets.symmetric(horizontal: 12.0),
+                  child:  Text(
+                    'Login',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.blueGrey.shade500,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 60,
                 ),
                 buildTextFormField(label: "Email", onChanged: (m) {}),
                 SizedBox(
@@ -48,10 +63,12 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 45,
                 ),
-                buildButton(context, text: 'Login',
-                onPressed: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage() ) );
-                }),
+                Center(
+                  child: buildButton(context, text: 'Login',
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage() ) );
+                  }),
+                ),
                 buildRowInBottom(
                     text: 'Don’t have an account?',
                     textButton: 'Sign up',

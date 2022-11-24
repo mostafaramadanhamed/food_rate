@@ -47,7 +47,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           Image(image: AssetImage(SplashImage),),
+           const Image(image:  AssetImage(SplashImage),),
           SlidingText(slidingAnimation: slidingAnimation),
         ],
       ),
@@ -71,7 +71,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Timer(const Duration(milliseconds: delayTime), ()
     {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Login()));
+          context, MaterialPageRoute(builder: (context) => const Login()));
     });
   }
 }
