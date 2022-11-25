@@ -3,7 +3,7 @@ import 'package:food_rate/const/img.dart';
 import 'package:food_rate/view/enter/register.dart';
 
 import 'widgets/custom_widget.dart';
-import '../home_screen.dart';
+import '../home/home_screen.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);

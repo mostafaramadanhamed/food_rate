@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_rate/view/home/home_screen.dart';
 import 'package:food_rate/view/splash/splash_screen.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Rate',
-      home: SplashView(),
+      home: HomePage(),
     );
   }
 }
