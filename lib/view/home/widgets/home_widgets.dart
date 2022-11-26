@@ -25,7 +25,7 @@ SizedBox buildListViewHHome(BuildContext context) {
       physics: const BouncingScrollPhysics(),
       itemBuilder:(context,index)=>buildItemHHome(context,index),
       scrollDirection: Axis.horizontal,
-      itemCount: images.length,
+      itemCount: names.length,
 
     ),
   );
@@ -66,20 +66,24 @@ Container buildItemHHome(BuildContext context,int index) {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                       Container(
-
+                       SizedBox(
+                         width: 110,
                          child: Text(names[index],style:const TextStyle(
                               fontSize: 15,fontWeight: FontWeight.w500,
-                              overflow: TextOverflow.fade,
+                              overflow: TextOverflow.ellipsis,
                             ),softWrap: false,
                               maxLines: 1,),
                        ),
+                      const SizedBox(height: 5,),
                       Row(
-                        children: const[  Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
-                          Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
-                          Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
-                          Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
-                          Icon(FontAwesomeIcons.solidStarHalfStroke,color: Colors.amberAccent,size: 13,),],
+                        children: [const  Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
+                          const Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
+                          const Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
+                          const Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
+                          const Icon(FontAwesomeIcons.solidStarHalfStroke,color: Colors.amberAccent,size: 13,),
+                        const SizedBox(width:25 ,),
+                        Text(rating[index].toString(),textAlign: TextAlign.end,)
+                        ],
                       ),
                       ],
                     ),
@@ -134,7 +138,7 @@ Expanded buildItemNameAndRateHome(int index, BuildContext context) {
       child: Row(
         children: [
           Expanded(
-            flex: 4,
+            flex: 3,
             child: Column(mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -167,6 +171,7 @@ Expanded buildItemNameAndRateHome(int index, BuildContext context) {
           ),
           const Spacer(),
           Expanded(
+            flex: 1,
             child: Column(
               children: [
 
@@ -174,7 +179,6 @@ Expanded buildItemNameAndRateHome(int index, BuildContext context) {
                 Text('Rated',style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 15),)
               ],
             ),
-            flex: 1,
           )
         ],
       ),
