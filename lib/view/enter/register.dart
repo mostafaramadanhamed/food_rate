@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/img.dart';
+import 'package:food_rate/const/strings.dart';
 import 'widgets/custom_widget.dart';
 
 class Register extends StatelessWidget {
@@ -21,13 +22,13 @@ class Register extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 20,
                 ),
-                const Center(child: Image(image: AssetImage(SplashImage))),
+                const Center(child: Image(image: AssetImage(AssetsImages.splashImage))),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
                 ),
                 const  Center(
                   child:  Text(
-                    'Food Rate',
+                   Strings.kAppName ,
                     style: TextStyle(
                       fontSize: 27,
                       color: Colors.white,

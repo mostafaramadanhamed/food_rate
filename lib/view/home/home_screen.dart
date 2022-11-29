@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'widgets/home_widgets.dart';
 
 
@@ -10,7 +8,6 @@ class HomePage  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: buildAppBarHome(),
       body: ListView(padding: const EdgeInsets.symmetric(horizontal: 16),
         physics: const BouncingScrollPhysics(),

@@ -21,7 +21,7 @@ Container buildButton(BuildContext context,{required String text,required void F
         borderRadius: BorderRadius.circular(25)
     ),
 
-    child: TextButton(onPressed: onPressed, child: Text(text,style: TextStyle(color: Colors.white,fontSize: 25),)),
+    child: TextButton(onPressed: onPressed, child: Text(text,style: const TextStyle(color: Colors.white,fontSize: 25),)),
   );
 }
 Row buildRowInBottom(

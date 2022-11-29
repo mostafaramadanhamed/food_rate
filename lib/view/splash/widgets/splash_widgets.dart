@@ -47,7 +47,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           const Image(image:  AssetImage(SplashImage),),
+           const Image(image:  AssetImage(AssetsImages.splashImage),),
           SlidingText(slidingAnimation: slidingAnimation),
         ],
       ),
@@ -68,7 +68,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToReg() {
-    Timer(const Duration(milliseconds: delayTime), ()
+    Timer(const Duration(milliseconds: Numbers.delayTime), ()
     {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const Login()));

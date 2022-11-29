@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/img.dart';
+import 'package:food_rate/const/strings.dart';
 import 'package:food_rate/view/enter/register.dart';
 
 import 'widgets/custom_widget.dart';
@@ -24,13 +25,13 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 20,
                 ),
-                const Center(child: Image(image: AssetImage(SplashImage))),
+                const Center(child: Image(image: AssetImage(AssetsImages.splashImage))),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
                 ),
                 const Center(
                   child:  Text(
-                    'Food Rate',
+                    Strings.kAppName,
                     style: TextStyle(
                       fontSize: 27,
                       color: Colors.white,
@@ -66,7 +67,7 @@ class Login extends StatelessWidget {
                 Center(
                   child: buildButton(context, text: 'Login',
                   onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage() ) );
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomePage() ) );
                   }),
                 ),
                 buildRowInBottom(

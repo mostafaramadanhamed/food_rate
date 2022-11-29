@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+
+import '../../../const/strings.dart';
 class SlidingText extends StatelessWidget {
   const SlidingText({
     Key? key,
@@ -16,7 +18,7 @@ class SlidingText extends StatelessWidget {
           return SlideTransition(
             position: slidingAnimation,
             child: const Text(
-              'Food Rate',style: TextStyle(
+              Strings.kAppName,style: TextStyle(
               fontSize: 27,
               color: Colors.white,
               fontWeight: FontWeight.w600,
