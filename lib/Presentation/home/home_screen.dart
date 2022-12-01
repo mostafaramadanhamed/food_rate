@@ -8,7 +8,7 @@ class HomePage  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBarHome(),
+      appBar: buildAppBarHome(context),
       body: ListView(padding: const EdgeInsets.symmetric(horizontal: 16),
         physics: const BouncingScrollPhysics(),
         children: [

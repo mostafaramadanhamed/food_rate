@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_rate/const/strings.dart';
-import 'package:food_rate/view/home/home_screen.dart';
+
+import 'Presentation/home/home_screen.dart';
 
 void main() {
   runApp( const MyApp());
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         /* dark theme settings */
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       title: Strings.kAppName,
       home: const HomePage(),
     );

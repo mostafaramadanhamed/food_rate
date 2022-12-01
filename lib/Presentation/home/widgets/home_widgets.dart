@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food_rate/Presentation/about%20us%20screen.dart';
 
 
 Container buildItemVHome(int index, BuildContext context) {
@@ -114,12 +115,12 @@ List<String>names=[
 ];
 List<String>images=[
  'https://img.freepik.com/free-photo/turkish-arabic-traditional-ramadan-mix-kebab-plate-kebab-adana-chicken-lamb-beef-lavash-bread-with-sauce-top-view_2829-6169.jpg?w=1060&t=st=1669300834~exp=1669301434~hmac=6d5562bc67a4e966d462361fd7ba7a21bf8cbba50204ec3fdb5bce4c1e67807d',
-  'https://img.freepik.com/free-photo/traditional-tajine-dishes-couscous-fresh-salad-rustic-wooden-table-tagine-lamb-meat-pumpkin-top-view-flat-lay_2829-6116.jpg?w=1380&t=st=1669365344~exp=1669365944~hmac=a46eb5e4ef561e1925471e51b390e69dd1fa5f33c37857eb640eae1f1e47ac30',
+  'https://img.freepik.com/free-photo/traditional-tajine-dishes-couscous-fresh-salad-rustic-wooden-table-tagine-lamb-meat-pumpkin-top-Presentation-flat-lay_2829-6116.jpg?w=1380&t=st=1669365344~exp=1669365944~hmac=a46eb5e4ef561e1925471e51b390e69dd1fa5f33c37857eb640eae1f1e47ac30',
   'https://img.freepik.com/premium-photo/homemade-chicken-biryani-blue-surface_158388-221.jpg?w=1060',
   'https://img.freepik.com/premium-photo/delicious-mixture-pizza-italian-food_550617-15185.jpg?w=1060',
   'https://img.freepik.com/free-photo/tortilla-wrap-with-falafel-fresh-salad-vegan-tacos-vegetarian-healthy-food_2829-6193.jpg?w=1060&t=st=1669365626~exp=1669366226~hmac=746ca1ce909bc915a8fb7849369420b3c907e5b2c73658c128b4561a138a1aa5',
 'https://img.freepik.com/free-photo/mini-chocolate-sufle-cupcakes-with-raspberries_114579-53083.jpg?w=1060&t=st=1669452251~exp=1669452851~hmac=5c2a10c7d40b2ef32b10cad927e04ed2a7e695055811c154dec8887a0ad07930',
-'https://img.freepik.com/free-photo/front-view-strawberry-milkshake-with-copy-space_23-2148707843.jpg?w=996&t=st=1669452482~exp=1669453082~hmac=7b532ee6c75e527b61a48b7bfaff75f6fc50fd91f99e28e4dd503b50e761d14d',
+'https://img.freepik.com/free-photo/front-Presentation-strawberry-milkshake-with-copy-space_23-2148707843.jpg?w=996&t=st=1669452482~exp=1669453082~hmac=7b532ee6c75e527b61a48b7bfaff75f6fc50fd91f99e28e4dd503b50e761d14d',
   'https://img.freepik.com/free-photo/high-angle-chocolate-milkshake-glass-with-pretzels-straws_23-2148707839.jpg?w=740&t=st=1669452575~exp=1669453175~hmac=5cafc0e48f91b555092deee06c160774433b1c220500ef6ade11b69d3dacab2a',
 
 ];
@@ -215,7 +216,7 @@ Expanded buildExpandedImageItemHome(int index) {
     ),);
 }
 
-AppBar buildAppBarHome() {
+AppBar buildAppBarHome(context) {
   return AppBar(
 
     title: const Text('Home',style: TextStyle(
@@ -226,10 +227,10 @@ AppBar buildAppBarHome() {
     actions: [
       IconButton(
           onPressed: (){
-
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutUsScreen()));
           },
           icon: const Icon(
-            FontAwesomeIcons.bell,
+            Icons.info_outline_rounded,
             color: Colors.black,
           )),
     ],

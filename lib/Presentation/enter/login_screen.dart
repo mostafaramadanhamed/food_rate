@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_rate/Presentation/enter/register.dart';
 import 'package:food_rate/const/img.dart';
 import 'package:food_rate/const/strings.dart';
-import 'package:food_rate/view/enter/register.dart';
-
 import 'widgets/custom_widget.dart';
 import '../home/home_screen.dart';
 

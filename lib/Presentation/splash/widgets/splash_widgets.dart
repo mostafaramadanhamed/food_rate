@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:food_rate/view/enter/login_screen.dart';
+import 'package:food_rate/const/color.dart';
 import '../../../const/img.dart';
 import '../../../const/num.dart';
+import '../../enter/login_screen.dart';
 import 'slidin_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -38,10 +39,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
-          Colors.blue.shade100,
-          Colors.blue.shade200,
-          Colors.blue.shade300,
-          Colors.blue.shade400,
+        MyColor.PrimaryColor.shade100,
+          MyColor.PrimaryColor.shade200,
+          MyColor.PrimaryColor.shade300,
+          MyColor.PrimaryColor.shade400,
         ])
       ),
       child: Column(
