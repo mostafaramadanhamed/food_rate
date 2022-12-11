@@ -14,7 +14,6 @@ class HomePage  extends StatelessWidget {
         children: [
           Column(
             children: [
-              buildListViewHHome(context),
              buildListViewVHome()
            ]
           ),

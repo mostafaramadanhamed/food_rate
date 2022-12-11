@@ -20,89 +20,89 @@ Container buildItemVHome(int index, BuildContext context) {
     ),
   );
 }
-
-SizedBox buildListViewHHome(BuildContext context) {
-  return SizedBox(
-    height: MediaQuery.of(context).size.height/4,
-    child: ListView.builder(
-      physics: const BouncingScrollPhysics(),
-      itemBuilder:(context,index)=>buildItemHHome(context,index),
-      scrollDirection: Axis.horizontal,
-      itemCount: names.length,
-
-    ),
-  );
-}
-Container buildItemHHome(BuildContext context,int index) {
-  return Container(
-
-    margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-    clipBehavior: Clip.antiAliasWithSaveLayer,
-    decoration: BoxDecoration(
-
-        borderRadius: BorderRadius.circular(20)
-    ),
-    child: Container(
-      color:Theme.of(context).backgroundColor,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-        Expanded(
-        flex: 3,
-        child:  Container(clipBehavior: Clip.antiAliasWithSaveLayer,
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15)
-              )
-          ),
-          child:  Image(
-            image: NetworkImage(images[index]),
-
-          ),
-        ),),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Row(
-                children: [
-                  Column(mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         SizedBox(
-                           width: MediaQuery.of(context).size.width/4.5,
-                           child: Text(names[index],style:const TextStyle(
-                                fontSize: 15,fontWeight: FontWeight.w500,
-                                overflow: TextOverflow.ellipsis,
-                              ),softWrap: false,
-                                maxLines: 1,),
-                         ),
-                        const SizedBox(height: 5,),
-                        Row(
-                          children: [const  Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
-
-
-                           SizedBox(width:MediaQuery.of(context).size.width/80),
-                          Text(rating[index].toString(),textAlign: TextAlign.end,)
-                          ],
-                        ),
-                        ],
-                      ),
-
-
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
+//
+// SizedBox buildListViewHHome(BuildContext context) {
+//   return SizedBox(
+//     height: MediaQuery.of(context).size.height/4,
+//     child: ListView.builder(
+//       physics: const BouncingScrollPhysics(),
+//       itemBuilder:(context,index)=>buildItemHHome(context,index),
+//       scrollDirection: Axis.horizontal,
+//       itemCount: names.length,
+//
+//     ),
+//   );
+// }
+// Container buildItemHHome(BuildContext context,int index) {
+//   return Container(
+//
+//     margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+//     clipBehavior: Clip.antiAliasWithSaveLayer,
+//     decoration: BoxDecoration(
+//
+//         borderRadius: BorderRadius.circular(20)
+//     ),
+//     child: Container(
+//       color:Theme.of(context).backgroundColor,
+//       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//         Expanded(
+//         flex: 3,
+//         child:  Container(clipBehavior: Clip.antiAliasWithSaveLayer,
+//           decoration: const BoxDecoration(
+//               borderRadius: BorderRadius.only(
+//                   topRight: Radius.circular(15)
+//               )
+//           ),
+//           child:  Image(
+//             image: NetworkImage(images[index]),
+//
+//           ),
+//         ),),
+//           Expanded(
+//             flex: 2,
+//             child: Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 8),
+//               child: Row(
+//                 children: [
+//                   Column(mainAxisAlignment: MainAxisAlignment.start,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                          SizedBox(
+//                            width: MediaQuery.of(context).size.width/4.5,
+//                            child: Text(names[index],style:const TextStyle(
+//                                 fontSize: 15,fontWeight: FontWeight.w500,
+//                                 overflow: TextOverflow.ellipsis,
+//                               ),softWrap: false,
+//                                 maxLines: 1,),
+//                          ),
+//                         const SizedBox(height: 5,),
+//                         Row(
+//                           children: [const  Icon(FontAwesomeIcons.solidStar,color: Colors.amberAccent,size: 14),
+//
+//
+//                            SizedBox(width:MediaQuery.of(context).size.width/80),
+//                           Text(rating[index].toString(),textAlign: TextAlign.end,)
+//                           ],
+//                         ),
+//                         ],
+//                       ),
+//
+//
+//                     ],
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     ),
+//   );
+// }
 List<String>names=[
   'Kebab',
   'Tagine lamb meat and pumpkin.',
