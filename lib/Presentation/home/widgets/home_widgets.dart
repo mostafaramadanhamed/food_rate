@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_rate/Presentation/about%20us%20screen.dart';
 
+import '../../about_us_screen.dart';
 
-Container buildItemVHome(int index, BuildContext context) {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 8),
-    clipBehavior: Clip.antiAliasWithSaveLayer,
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15)
-    ),
-    child: Container( color:Theme.of(context).backgroundColor,
-      child: Row(
-        children: [
-          buildExpandedImageItemHome(index),
-          buildItemNameAndRateHome(index, context),
-        ],
+//Image.network(images[index]),
+Widget buildItemVHome(int index, BuildContext context,void Function()? onTap) {
+  return InkWell(
+    onTap: onTap,
+    child: Container(
+      margin: const EdgeInsets.symmetric(horizontal: 5,vertical: 8),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15)
+      ),
+      child: Container( color:Theme.of(context).highlightColor.withOpacity(.3),
+        child: Row(
+          children: [
+            buildImageItemHome(index),
+            buildItemNameAndRateHome(index, context),
+          ],
+        ),
       ),
     ),
   );
@@ -135,12 +139,13 @@ List<int>rating=[
   126,
 ];
 
-ListView buildListViewVHome() {
+ListView buildListViewVHome(void Function()? onTap) {
   return ListView.builder(
+
     shrinkWrap: true,
     physics: const NeverScrollableScrollPhysics(),
     itemBuilder:(context,index){
-      return  buildItemVHome(index, context);
+      return  buildItemVHome(index, context,onTap);
     } ,itemCount: names.length,
   );
 }
@@ -200,10 +205,9 @@ Expanded buildItemNameAndRateHome(int index, BuildContext context) {
   );
 }
 
-Expanded buildExpandedImageItemHome(int index) {
+Widget buildImageItemHome(int index) {
   return Expanded(
-    flex: 1,
-    child:  Container(clipBehavior: Clip.antiAliasWithSaveLayer,
+    child: Container(clipBehavior: Clip.antiAliasWithSaveLayer,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(15)
@@ -211,18 +215,15 @@ Expanded buildExpandedImageItemHome(int index) {
       ),
       child:  Image(
         image: NetworkImage(images[index]),
-
       ),
-    ),);
+    ),
+  );
 }
 
 AppBar buildAppBarHome(context) {
   return AppBar(
 
-    title: const Text('Home',style: TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w500,
-    ),),
+    title: const Text('Home',),
     centerTitle: true,
     actions: [
       IconButton(
@@ -231,9 +232,7 @@ AppBar buildAppBarHome(context) {
           },
           icon: const Icon(
             Icons.info_outline_rounded,
-            color: Colors.black,
           )),
     ],
-    elevation: 0,
   );
 }

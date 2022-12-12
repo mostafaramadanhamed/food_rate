@@ -39,10 +39,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
-        MyColor.PrimaryColor.shade100,
-          MyColor.PrimaryColor.shade200,
-          MyColor.PrimaryColor.shade300,
-          MyColor.PrimaryColor.shade400,
+        MyColor.primaryColor.shade100,
+          MyColor.primaryColor.shade200,
+          MyColor.primaryColor.shade300,
+          MyColor.primaryColor.shade400,
         ])
       ),
       child: Column(

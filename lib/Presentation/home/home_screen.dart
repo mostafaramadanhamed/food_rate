@@ -9,12 +9,12 @@ class HomePage  extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBarHome(context),
-      body: ListView(padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
           Column(
             children: [
-             buildListViewVHome()
+             buildListViewVHome((){})
            ]
           ),
         ],
