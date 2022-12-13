@@ -1,7 +1,8 @@
 abstract class FoodStates{}
 
+class FoodInitialState extends FoodStates{}
+
 // Meals
-class MealInitialState extends FoodStates{}
 // get meals
 class MealGetLoadingState extends FoodStates{}
 class MealGetSuccessState extends FoodStates{}
@@ -12,7 +13,6 @@ class MealGetErrorState extends FoodStates{
 }
 
 //Rating
-class RatingsInitialState extends FoodStates{}
 // Set Ratings
 class RatingSetLoadingState extends FoodStates{}
 class RatingSetSuccessState extends FoodStates{}
