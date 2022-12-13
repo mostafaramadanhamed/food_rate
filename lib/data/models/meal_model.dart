@@ -6,4 +6,13 @@ class Meal{
   late double avgRating;
   late int noRating;
 
+  //ToDo add value to json from api
+  Meal.fromJson(Map<String,dynamic>json){
+    id= json[''];
+    name= json[''];
+    disc= json[''];
+    img= json[''];
+    avgRating= json[''];
+    noRating= json[''];
+  }
 }
