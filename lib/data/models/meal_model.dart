@@ -1,18 +1,28 @@
-class Meal{
-  late int id;
-  late String name;
-  late String disc;
-  late String img;
-  late double avgRating;
-  late int noRating;
+class Meal {
+late  int id;
+late  String title;
+late String description;
+late int noOfRatings;
+late int avgRating;
+late String image;
 
-  //ToDo add value to json from api
-  Meal.fromJson(Map<String,dynamic>json){
-    id= json[''];
-    name= json[''];
-    disc= json[''];
-    img= json[''];
-    avgRating= json[''];
-    noRating= json[''];
+  Meal.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+    description = json['description'];
+    noOfRatings = json['no_of_ratings'];
+    avgRating = json['avg_rating'];
+    image = json['image'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = id;
+    data['title'] = title;
+    data['description'] = description;
+    data['no_of_ratings'] = noOfRatings;
+    data['avg_rating'] = avgRating;
+    data['image'] = image;
+    return data;
   }
 }
