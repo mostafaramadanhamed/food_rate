@@ -7,4 +7,5 @@ class FoodCubit extends Cubit<FoodStates>  {
 
   FoodCubit():super(FoodInitialState());
 
+
 }

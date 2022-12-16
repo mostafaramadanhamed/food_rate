@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:food_rate/const/strings.dart';
 
 class DioHelper{
 
  late Dio dio;
  DioHelper(){
    BaseOptions baseOptions=BaseOptions(
-     baseUrl: 'base url',
+     baseUrl: Strings.baseUrl,
      receiveTimeout: 15*1000,
      sendTimeout: 15*1000,
      receiveDataWhenStatusError: true,
