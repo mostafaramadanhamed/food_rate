@@ -13,18 +13,29 @@ class DioHelper{
    );
 dio=Dio(baseOptions);
  }
+//
+//  Future<Response>getDate ({
+//   required String url,
+//     Map<String,dynamic>?query,
+// })async{
+//   dio.options.headers  =
+//   {
+//     'Content-Type': 'application/json',
+//   };
+//   return await dio.get(
+//     url,
+//     queryParameters: query,
+//   );
+// }
+ Future<List<dynamic>>getAllMeals()async{
+   try{
 
- Future<Response>getDate ({
-  required String url,
-    Map<String,dynamic>?query,
-})async{
-  dio.options.headers  =
-  {
-    'Content-Type': 'application/json',
-  };
-  return await dio.get(
-    url,
-    queryParameters: query,
-  );
-}
+     Response response=await dio.get('meals');
+     return response.data;
+   }
+   catch(ex){
+     print('Error in $ex');
+     return [];
+   }
+ }
 }
