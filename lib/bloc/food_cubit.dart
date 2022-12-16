@@ -1,23 +1,22 @@
-
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/bloc/food_states.dart';
 import 'package:food_rate/data/models/meal_model.dart';
-import 'package:food_rate/data/service/dio.dart';
+import '../data/repository.dart';
 
 class FoodCubit extends Cubit<FoodStates>  {
+final FoodRepository foodRepository;
+List<Meal>meals=[];
+  FoodCubit(this.foodRepository):super(FoodInitialState());
 
-  FoodCubit():super(FoodInitialState());
+  void getAllMeals(){
+    emit(MealGetLoadingState());
+    foodRepository.getAllMeals().then((meals) {
+      emit(MealGetSuccessState(meals));
+      this.meals=meals;
+    }).catchError((error){
+      emit(MealGetErrorState(error));
+    });
 
-// late DioHelper dioHelper;
-// void getMeals(){
-//   dioHelper.getDate(url: 'meals/');
-// }
-  // List<Meal>getAllCharacters(){
-  //   dioHelper.getDate(url: 'meals').then((val) {
-  //     emit(MealGetLoadingState());
-  //
-  //   });
-  //   return Meal;
-  // }
+
+  }
 }

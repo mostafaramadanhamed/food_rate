@@ -1,11 +1,18 @@
+import 'package:food_rate/data/models/meal_model.dart';
+
 abstract class FoodStates{}
 
 class FoodInitialState extends FoodStates{}
 
 // Meals
 // get meals
-class MealGetLoadingState extends FoodStates{}
-class MealGetSuccessState extends FoodStates{}
+class MealGetLoadingState extends FoodStates{
+
+}
+class MealGetSuccessState extends FoodStates{
+  final List<Meal>meals;
+
+MealGetSuccessState(this.meals);}
 class MealGetErrorState extends FoodStates{
   final String error;
 
