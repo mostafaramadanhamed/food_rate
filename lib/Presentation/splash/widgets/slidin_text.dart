@@ -18,7 +18,7 @@ class SlidingText extends StatelessWidget {
           return SlideTransition(
             position: slidingAnimation,
             child: const Text(
-              Strings.kAppName,style: TextStyle(
+              MyStrings.kAppName,style: TextStyle(
               fontSize: 27,
               color: Colors.white,
               fontWeight: FontWeight.w600,

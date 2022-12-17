@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         /* dark theme settings */
       ),
       themeMode: ThemeMode.dark,
-      title: Strings.kAppName,
+      title: MyStrings.kAppName,
       home: const HomePage(),
     );
   }

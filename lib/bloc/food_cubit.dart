@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/bloc/food_states.dart';
 import 'package:food_rate/data/models/meal_model.dart';
-import '../data/repository.dart';
+import '../data/repo/repository.dart';
 
 class FoodCubit extends Cubit<FoodStates>  {
 final FoodRepository foodRepository;

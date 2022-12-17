@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
                 ),
                 const Center(
                   child:  Text(
-                    Strings.kAppName,
+                    MyStrings.kAppName,
                     style: TextStyle(
                       fontSize: 27,
                       color: Colors.white,

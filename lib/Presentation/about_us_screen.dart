@@ -13,7 +13,7 @@ class AboutUsScreen extends StatelessWidget {
         child: Column(
           children: [
             Center(child: Image.asset(AssetsImages.splashImage)),
-          const  Text(Strings.kAppName,style: TextStyle(
+          const  Text(MyStrings.kAppName,style: TextStyle(
               fontSize: 25
             ),),
             RichText(text: const TextSpan(
