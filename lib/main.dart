@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
        scaffoldBackgroundColor: Colors.blueGrey.shade50,
        highlightColor: Colors.blueGrey.shade200,
        appBarTheme: AppBarTheme(
+         elevation: 0,
          backgroundColor: Colors.blueGrey.shade300,
          titleTextStyle:const  TextStyle(color: Colors.black, fontWeight: FontWeight.w600,fontSize: 24),
          iconTheme:const IconThemeData(color: Colors.black,)
@@ -43,11 +44,12 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
           scaffoldBackgroundColor: Colors.blueGrey,
           appBarTheme: AppBarTheme(
+            elevation: 0,
               backgroundColor: Colors.blueGrey.shade600
           )
         /* dark theme settings */
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       title: MyStrings.kAppName,
         onGenerateRoute: appRouter.generateRoute,
     );

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/Presentation/home/widgets/meal_item.dart';
 import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/bloc/food_states.dart';
-import 'package:food_rate/const/color.dart';
 import 'package:food_rate/data/models/meal_model.dart';
 import 'widgets/home_widgets.dart';
 
@@ -32,13 +31,10 @@ class _HomePageState extends State<HomePage> {
   }
   Widget buildLoadedListWidget(){
     return SingleChildScrollView(
-      child: Container(
-        color:MyColor.primaryColor.shade200,
-        child: Column(
-          children: [
-            buildMealsList(),
-          ],
-        ),
+      child: Column(
+        children: [
+          buildMealsList(),
+        ],
       ),
     );
   }

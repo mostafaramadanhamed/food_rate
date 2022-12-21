@@ -27,7 +27,6 @@ class MealsDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade800,
       body: CustomScrollView(
         physics:const BouncingScrollPhysics(),
         slivers: [
@@ -49,10 +48,14 @@ class MealsDetailsScreen extends StatelessWidget {
                             text: 'Name : ',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
+                              color: Colors.blueGrey
                             ),
                           ),
                           TextSpan(
                               text: meal.title,
+                            style: TextStyle(
+                              color: Colors.black,
+                            )
                           )
                         ],
                       ) ,
