@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:food_rate/app_router.dart';
 import 'package:food_rate/const/strings.dart';
-
-import 'Presentation/home/home_screen.dart';
-
 void main() {
-  runApp( const MyApp());
+  runApp(  MyApp(appRouter: AppRouter(),));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final AppRouter appRouter;
+  const MyApp({Key? key, required this.appRouter}) : super(key: key);
   // final  MaterialColor myColor =  const MaterialColor(0xFFFFFFFF,
   //     {
   //       50 : Colors.white10 ,
@@ -47,7 +46,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       title: MyStrings.kAppName,
-      home: const HomePage(),
+        onGenerateRoute: appRouter.generateRoute,
     );
   }
 
