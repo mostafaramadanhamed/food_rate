@@ -14,7 +14,7 @@ List<Meal>meals=[];
       emit(MealGetSuccessState(meals));
       this.meals=meals;
     }).catchError((error){
-      emit(MealGetErrorState(error));
+      emit(MealGetErrorState(error.toString()));
     });
 
 
