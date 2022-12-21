@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/app_router.dart';
+import 'package:food_rate/bloc/bloc_observer.dart';
 import 'package:food_rate/const/strings.dart';
 void main() {
+  Bloc.observer=MyBlocObserver();
   runApp(  MyApp(appRouter: AppRouter(),));
 }
 

@@ -3,7 +3,7 @@ late  int id;
 late  String title;
 late String description;
 late int noOfRatings;
-late int avgRating;
+late double avgRating;
 late String image;
 
   Meal.fromJson(Map<String, dynamic> json) {

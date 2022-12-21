@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/bloc/food_states.dart';
 import 'package:food_rate/data/models/meal_model.dart';
@@ -15,6 +16,7 @@ List<Meal>meals=[];
       this.meals=meals;
     }).catchError((error){
       emit(MealGetErrorState(error.toString()));
+      debugPrint(error.toString());
     });
 
 

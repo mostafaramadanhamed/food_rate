@@ -86,7 +86,7 @@ class MealsDetailsScreen extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                              text: meal.avgRating.toString(),
+                              text: '${meal.avgRating}',
                           )
                         ],
                       ) ,
@@ -103,7 +103,7 @@ class MealsDetailsScreen extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                              text: meal.noOfRatings.toString(),
+                              text:'${meal.noOfRatings}',
                           )
                         ],
                       ) ,

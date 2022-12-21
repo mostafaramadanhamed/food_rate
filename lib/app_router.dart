@@ -32,6 +32,6 @@ class AppRouter{
             create: (BuildContext context)=>foodCubit,
             child: MealsDetailsScreen(meal: meal,)));
     }
-    return null;
+
   }
 }
