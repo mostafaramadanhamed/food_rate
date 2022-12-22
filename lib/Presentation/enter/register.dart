@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/const/img.dart';
 import 'package:food_rate/const/strings.dart';
+import 'package:food_rate/data/repo/repository.dart';
+import 'package:food_rate/data/service/dio.dart';
 import 'widgets/custom_widget.dart';
 
 class Register extends StatelessWidget {
-  const Register({Key? key}) : super(key: key);
-
+   Register({Key? key}) : super(key: key);
+final TextEditingController usernameController=TextEditingController();
+final TextEditingController passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,18 +58,23 @@ class Register extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 60,
                 ),
-                buildTextFormField(label: "Email", onChanged: (m) {}),
+                buildTextFormField(label: "Email", onChanged: (m) {},controller:usernameController, ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 30,
                 ),
-                buildTextFormField(label: "Password", onChanged: (m) {}),
+                buildTextFormField(label: "Password", onChanged: (m) {}, controller: passwordController,),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 45,
                 ),
                 Center(
                   child: buildButton(context,text: 'Sign up',onPressed: (){
-
+                    try {
+                     FoodCubit(FoodRepository(DioHelper())).register(username: usernameController.text, password: passwordController.text);
                       Navigator.pop(context);
+                    }
+                    catch(error){
+                      debugPrint(error.toString());
+                    }
                   }),
                 ),
                 buildRowInBottom(

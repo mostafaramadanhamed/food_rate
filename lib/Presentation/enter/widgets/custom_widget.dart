@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-TextFormField buildTextFormField({required String label, required void Function(String)? onChanged}) {
+TextFormField buildTextFormField({required String label, required void Function(String)? onChanged, required TextEditingController controller}) {
   return TextFormField(
     decoration: InputDecoration(
       labelText:label ,
@@ -9,6 +9,7 @@ TextFormField buildTextFormField({required String label, required void Function(
         borderRadius: BorderRadius.circular(25.0),
       ),
     ),
+    controller: controller,
     onChanged: onChanged,
   );
 }

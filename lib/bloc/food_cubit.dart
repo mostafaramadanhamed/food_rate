@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/bloc/food_states.dart';
 import 'package:food_rate/data/models/meal_model.dart';
+import 'package:food_rate/data/service/dio.dart';
 import '../data/repo/repository.dart';
 
 class FoodCubit extends Cubit<FoodStates>  {
@@ -20,5 +21,16 @@ List<Meal>meals=[];
     });
 
 
+  }
+  void register({
+  required String username,
+    required String password,
+}){
+    try {
+      DioHelper().register(username: username, password: password);
+    }
+    catch(ex){
+      debugPrint(ex.toString());
+    }
   }
 }
