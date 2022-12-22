@@ -25,4 +25,24 @@ dio=Dio(baseOptions);
      return [];
    }
  }
+ Future<List<dynamic>>register({
+  required String username,
+   required String password,
+})async{
+   try{
+     Response response =await dio.post(
+         MyStrings.users,
+       data: {
+           'username':username,
+         'password':password,
+       }
+     );
+     return response.data;
+   }
+       catch(ex){
+     debugPrint('error in register $ex');
+     return[];
+       }
+ }
+
 }
