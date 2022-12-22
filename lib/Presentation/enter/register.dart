@@ -4,12 +4,21 @@ import 'package:food_rate/const/img.dart';
 import 'package:food_rate/const/strings.dart';
 import 'package:food_rate/data/repo/repository.dart';
 import 'package:food_rate/data/service/dio.dart';
+
 import 'widgets/custom_widget.dart';
 
-class Register extends StatelessWidget {
-   Register({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
+
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
 final TextEditingController usernameController=TextEditingController();
+
 final TextEditingController passwordController=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,13 +77,7 @@ final TextEditingController passwordController=TextEditingController();
                 ),
                 Center(
                   child: buildButton(context,text: 'Sign up',onPressed: (){
-                    try {
-                     FoodCubit(FoodRepository(DioHelper())).register(username: usernameController.text, password: passwordController.text);
-                      Navigator.pop(context);
-                    }
-                    catch(error){
-                      debugPrint(error.toString());
-                    }
+
                   }),
                 ),
                 buildRowInBottom(
@@ -90,6 +93,4 @@ final TextEditingController passwordController=TextEditingController();
       ),
     );
   }
-
-
 }

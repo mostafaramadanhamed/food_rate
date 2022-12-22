@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:food_rate/Presentation/enter/register.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/const/img.dart';
 import 'package:food_rate/const/strings.dart';
+import 'package:food_rate/data/repo/repository.dart';
+import 'package:food_rate/data/service/dio.dart';
 import 'widgets/custom_widget.dart';
 import '../home/home_screen.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final TextEditingController usernameController =TextEditingController();
+  final TextEditingController passwordController =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,29 +65,31 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 60,
                 ),
-                buildTextFormField(label: "Email", onChanged: (m) {}),
+                buildTextFormField(label: "Email", onChanged: (m) {}, controller:usernameController ,),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 30,
                 ),
-                buildTextFormField(label: "Password", onChanged: (m) {}),
+                buildTextFormField(label: "Password", onChanged: (m) {},controller: passwordController,),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 45,
                 ),
                 Center(
                   child: buildButton(context, text: 'Login',
                   onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomePage() ) );
+                    try {
+                      FoodCubit(FoodRepository(DioHelper())).register(username: usernameController.text, password: passwordController.text);
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> BlocProvider(
+
+                          create: (BuildContext context) =>FoodCubit(FoodRepository(DioHelper())),
+                          child: const HomePage()) ) );
+                    }
+                    catch(error){
+                      debugPrint(error.toString());
+                    }
+
                   }),
                 ),
-                buildRowInBottom(
-                    text: 'Don’t have an account?',
-                    textButton: 'Sign up',
-                    buttonOnPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Register();
-                      }));
-                    }),
+
               ],
             ),
           ],

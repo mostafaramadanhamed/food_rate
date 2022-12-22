@@ -25,7 +25,7 @@ dio=Dio(baseOptions);
      return [];
    }
  }
- Future<List<dynamic>>register({
+ Future<Map<String,dynamic>>register({
   required String username,
    required String password,
 })async{
@@ -41,8 +41,27 @@ dio=Dio(baseOptions);
    }
        catch(ex){
      debugPrint('error in register $ex');
-     return[];
+     return{};
+       }
+ } Future<Map<String,dynamic>>mealRating({
+  required int id,
+   required int stars,
+})async{
+   try{
+     Response response =await dio.post(
+         '${MyStrings.meals}$id${MyStrings.rating}',
+       data: {
+           'stars':stars,
+       }
+     );
+     return response.data;
+   }
+       catch(ex){
+     debugPrint('error in Rating $ex');
+     return{};
        }
  }
+
+
 
 }

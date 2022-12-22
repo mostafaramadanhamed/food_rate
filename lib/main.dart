@@ -11,19 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   final AppRouter appRouter;
   const MyApp({Key? key, required this.appRouter}) : super(key: key);
-  // final  MaterialColor myColor =  const MaterialColor(0xFFFFFFFF,
-  //     {
-  //       50 : Colors.white10 ,
-  //       100 : Colors.white12 ,
-  //       200 : Colors.white30 ,
-  //       300:  Colors.white38,
-  //       400 : Colors.white60 ,
-  //       500 :  Colors.white70 ,
-  //       600 : Colors.white ,
-  //       700 :  Color(0xFFF5F5F5) ,
-  //       800 :  Colors.white ,
-  //       900 : Colors.white ,
-  //     });
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(

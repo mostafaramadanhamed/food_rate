@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_rate/Presentation/details_screen/meal_details_screen.dart';
 import 'package:food_rate/Presentation/home/home_screen.dart';
+import 'package:food_rate/Presentation/splash/splash_screen.dart';
 import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/const/strings.dart';
 import 'package:food_rate/data/models/meal_model.dart';
@@ -19,13 +20,14 @@ class AppRouter{
   }
   Route ? generateRoute(RouteSettings settings){
     switch (settings.name){
+      case MyStrings.splashScreen:
+        return MaterialPageRoute(builder: (_)=>const SplashView());
       case MyStrings.foodScreen:
         return MaterialPageRoute(builder: (_)=>  BlocProvider(
           create:(BuildContext context)=>
           foodCubit ,
           child: const HomePage(),
         ));
-
       case MyStrings.foodDetailsScreen:
         final meal=settings.arguments as Meal ;
         return MaterialPageRoute(builder: (_)=> BlocProvider(

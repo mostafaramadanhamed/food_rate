@@ -10,7 +10,10 @@ final FoodRepository foodRepository;
 List<Meal>meals=[];
   FoodCubit(this.foodRepository):super(FoodInitialState());
 
-  void getAllMeals(){
+static FoodCubit get(context) => BlocProvider.of(context);
+
+
+void getAllMeals(){
     emit(MealGetLoadingState());
     foodRepository.getAllMeals().then((meals) {
       emit(MealGetSuccessState(meals));
