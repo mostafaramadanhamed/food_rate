@@ -11,7 +11,7 @@ late String image;
     title = json['title'];
     description = json['description'];
     noOfRatings = json['no_of_ratings'];
-    avgRating = json['avg_rating'];
+    avgRating = json['avg_rating'].toDouble();
     image = json['image'];
   }
 

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/const/img.dart';
 import 'package:food_rate/const/strings.dart';
-import 'package:food_rate/data/repo/repository.dart';
-import 'package:food_rate/data/service/dio.dart';
-
 import 'widgets/custom_widget.dart';
 
 class Register extends StatefulWidget {
@@ -76,16 +72,10 @@ final TextEditingController passwordController=TextEditingController();
                   height: MediaQuery.of(context).size.height / 45,
                 ),
                 Center(
-                  child: buildButton(context,text: 'Sign up',onPressed: (){
-
-                  }),
+                  child: buildButton(context,text: 'Sign up', onPressed: (){
+                Navigator.pop(context);
+                }),
                 ),
-                buildRowInBottom(
-                    text: 'Already have account',
-                    textButton: 'Login',
-                    buttonOnPressed: () {
-                      Navigator.pop(context);
-                    }),
               ],
             ),
           ],

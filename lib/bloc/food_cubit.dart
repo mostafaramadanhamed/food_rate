@@ -36,4 +36,15 @@ void getAllMeals(){
       debugPrint(ex.toString());
     }
   }
+   mealRating({
+  required int id,
+    required int stars,
+}){
+    try {
+      DioHelper().mealRating(id: id, stars: stars);
+    }
+    catch(ex){
+      debugPrint(ex.toString());
+    }
+  }
 }

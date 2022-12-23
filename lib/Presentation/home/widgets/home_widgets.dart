@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food_rate/Presentation/home/about_us.dart';
 
-import '../../about_us_screen.dart';
 
 //Image.network(images[index]),
 Widget buildItemVHome(int index, BuildContext context,void Function()? onTap) {
@@ -228,7 +228,7 @@ AppBar buildAppBarHome(context) {
     actions: [
       IconButton(
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutUsScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutUSScreen()));
           },
           icon: const Icon(
             Icons.info_outline_rounded,

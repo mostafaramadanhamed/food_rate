@@ -14,10 +14,10 @@ class MealItem extends StatelessWidget {
                 topRight: Radius.circular(15)
             )
         ),
-        child:  Image(
-          image: NetworkImage(meal.image),
+        child:  FadeInImage(
+          placeholder:  const AssetImage('assets/images/loading.gif'),
+          image: NetworkImage(meal.image),fit: BoxFit.cover,)
         ),
-      ),
     );
   }
   Expanded buildItemNameAndRateHome( BuildContext context) {

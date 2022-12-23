@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 import 'package:food_rate/Presentation/home/widgets/meal_item.dart';
 import 'package:food_rate/bloc/food_cubit.dart';
 import 'package:food_rate/bloc/food_states.dart';
+import 'package:food_rate/const/color.dart';
 import 'package:food_rate/data/models/meal_model.dart';
 import 'widgets/home_widgets.dart';
 
@@ -49,6 +51,33 @@ class _HomePageState extends State<HomePage> {
           );
         });
   }
+  Widget buildNoInternetWidget(){
+    return Center(
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height/15,
+            ),
+            Image.asset('assets/images/no_internet.jpg',
+              height:MediaQuery.of(context).size.height/1.5 ,
+              width: MediaQuery.of(context).size.width,),
+            const Text(
+              ' Can\'t connect .. check your internet',
+              style: TextStyle(
+                fontSize: 22,
+                color: MyColor.primaryColor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
   @override
   void initState() {
     super.initState();
@@ -59,7 +88,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBarHome(context),
-      body: buildBlocWidget(),
+        body:  OfflineBuilder(
+          connectivityBuilder: (
+              BuildContext context,
+              ConnectivityResult connectivity,
+              Widget child,
+              ) {
+            final bool connected = connectivity != ConnectivityResult.none;
+            if(connected){
+              return buildBlocWidget();
+            }
+            else{
+              return buildNoInternetWidget();
+            }
+          },
+          child: const Center(
+            child:  CircularProgressIndicator(color: MyColor.primaryColor,),
+          ),
+        )
     );
   }
 }
